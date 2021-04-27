@@ -4,6 +4,7 @@ ul.superMenu
     display: flex;
     flex-direction: row;
     margin: 40px 100px;
+    z-index: 3;
 }
 ul.superMenu li
 {
@@ -53,7 +54,7 @@ ul.superMenu li a
 }
 ul.superMenu:hover li a
 {
-    opacity: 0;
+    opacity: 1;
 }
 ul.superMenu li a:hover
 {
@@ -79,4 +80,22 @@ ul.superMenu li a:hover:before
     left: calc(100% + 100px);
     transition: 0.5s;
     transition-delay: 0.2s;
+}
+
+.fade-layer{
+    position: fixed;
+    height: 100%;
+    width:100%;
+    background: rgba(0,0,0,0.3);
+    top:0;
+    left:0;
+    z-index:2;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+}
+.fade-layer.active{
+    opacity: 1;
+    transition: all 0.3s ease-in;
+    visibility: visible;
 }
